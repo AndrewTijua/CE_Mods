@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+<!-- Adds in damage types for laser weapons, as they damage via thermal means rather than kinetic -->
+
+  <DamageDef>
+    <defName>AT_Laser_Small</defName>
+    <label>laser</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+	<makesBlood>false</makesBlood>
+    <deathMessage>{0} has been blasted to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Heat</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+	<explosionHeatEnergyPerCell>5</explosionHeatEnergyPerCell>
+	<explosionCellMote>Mote_BlastDry</explosionCellMote>
+	<explosionColorCenter>(0.55, 0.95, 1)</explosionColorCenter>
+	<explosionColorEdge>(0.6, 0.55, 0.4)</explosionColorEdge>
+  </DamageDef>
+  
+  <DamageDef>
+    <defName>AT_Laser_Large</defName>
+    <label>laser</label>
+    <workerClass>DamageWorker_AddInjury</workerClass>
+    <externalViolence>true</externalViolence>
+	<makesBlood>false</makesBlood>
+    <deathMessage>{0} has been blasted to death.</deathMessage>
+    <hediff>Burn</hediff>
+    <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+    <armorCategory>Heat</armorCategory>
+    <overkillPctToDestroyPart>0~0.7</overkillPctToDestroyPart>
+    <isRanged>true</isRanged>
+    <makesAnimalsFlee>true</makesAnimalsFlee>
+	<explosionAffectOutsidePartsOnly>false</explosionAffectOutsidePartsOnly>
+	<explosionHeatEnergyPerCell>10</explosionHeatEnergyPerCell>
+	<explosionCellMote>Mote_BlastDry</explosionCellMote>
+	<explosionColorCenter>(0.55, 0.95, 1)</explosionColorCenter>
+	<explosionColorEdge>(0.6, 0.55, 0.4)</explosionColorEdge>
+  </DamageDef>
+
+</Defs>
