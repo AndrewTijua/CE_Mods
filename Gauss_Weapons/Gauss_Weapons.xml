@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+ <!-- ==================== Gauss Rifle ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun_CE">
+    <defName>CG_Gauss_Rifle</defName>
+    <label>G-1 Handheld Coilgun</label>
+    <description>A relatively modern weapon that launches depleted uranium slugs at incredible velocities.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Gauss_1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>50500</WorkToMake>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.3</SwayFactor>
+      <Bulk>9.00</Bulk>
+      <Mass>4.00</Mass>
+      <RangedWeapon_Cooldown>0.42</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <Plasteel>25</Plasteel>
+	  <Chemfuel>10</Chemfuel>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.77</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_2mmGauss</defaultProjectile>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>7</ticksBetweenBurstShots>
+        <warmupTime>1</warmupTime>
+        <range>65</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>5</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>100</magazineSize>
+        <reloadTime>4</reloadTime>
+        <ammoSet>AmmoSet_2mmGauss</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>TRUE</aiUseBurstMode>
+        <aiAimMode>AimedShot</aiAimMode>
+        <aimedBurstShotCount>3</aimedBurstShotCount>
+      </li>
+    </comps>
+	<weaponTags>
+      <li>AdvancedGun</li>
+    </weaponTags>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+    </recipeMaker>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>9</power>
+          <cooldownTime>1.8</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetration>0.11</armorPenetration>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.118</armorPenetration>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.086</armorPenetration>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>
+  
+  <!-- ==================== Gauss Sniper ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun_CE">
+    <defName>CG_Gauss_Sniper</defName>
+    <label>G-2 Precision Coilgun</label>
+    <description>A relatively modern weapon that launches depleted uranium slugs at incredible velocities. This one has a big scope on it.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Gauss_2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>66000</WorkToMake>
+      <SightsEfficiency>5.0</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.80</SwayFactor>
+      <Bulk>12.00</Bulk>
+      <Mass>5.00</Mass>
+      <RangedWeapon_Cooldown>0.60</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>12</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <Plasteel>25</Plasteel>
+	  <Chemfuel>5</Chemfuel>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.77</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_2mmGauss</defaultProjectile>
+        <warmupTime>3.6</warmupTime>
+        <range>95</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>17</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>10</magazineSize>
+        <reloadTime>4</reloadTime>
+        <ammoSet>AmmoSet_2mmGauss</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+	<weaponTags>
+	  <li>SniperRifle</li>
+      <li>AdvancedGun</li>
+    </weaponTags>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+    </recipeMaker>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>9</power>
+          <cooldownTime>1.8</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetration>0.11</armorPenetration>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.118</armorPenetration>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.086</armorPenetration>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>
+
+</Defs>
+
+<!-- ==================== Gauss SMG ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun_CE">
+    <defName>CG_Gauss_SMG</defName>
+    <label>G-3 Rapid Launch Coilgun</label>
+    <description>An extremely rapidly firing close range coilgun. Will tear through almost anything, but is easily outranged and has huge recoil. Can be fired with one hand.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Gauss_3</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>45500</WorkToMake>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.09</ShotSpread>
+      <SwayFactor>2.3</SwayFactor>
+      <Bulk>5.00</Bulk>
+      <Mass>3.00</Mass>
+      <RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <Plasteel>25</Plasteel>
+	  <Chemfuel>10</Chemfuel>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>3.25</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_2mmGauss</defaultProjectile>
+        <burstShotCount>15</burstShotCount>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <warmupTime>1</warmupTime>
+        <range>20</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>150</magazineSize>
+        <reloadTime>4</reloadTime>
+        <ammoSet>AmmoSet_2mmGauss</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>TRUE</aiUseBurstMode>
+        <aiAimMode>Snapshot</aiAimMode>
+        <aimedBurstShotCount>5</aimedBurstShotCount>
+      </li>
+    </comps>
+	<weaponTags>
+      <li>AdvancedGun</li>
+	  <li>CE_Sidearm</li>
+      <li>CE_OneHandedWeapon</li>
+    </weaponTags>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+    </recipeMaker>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>9</power>
+          <cooldownTime>1.8</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetration>0.11</armorPenetration>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.118</armorPenetration>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.086</armorPenetration>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>

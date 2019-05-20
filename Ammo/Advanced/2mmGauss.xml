@@ -201,7 +201,7 @@
   <RecipeDef ParentName="ChargeAmmoRecipeBase">
     <defName>MakeAmmo_2mmGauss_API</defName>
     <label>make 2mm Gauss Slug (API) x1000</label>
-    <description>Craft 100 2mm Gauss Slug (API)s.</description>
+    <description>Craft 1000 2mm Gauss Slug (API)s.</description>
     <jobString>Making 2mm Gauss Slug (API)s.</jobString>
     <ingredients>
       <li>
