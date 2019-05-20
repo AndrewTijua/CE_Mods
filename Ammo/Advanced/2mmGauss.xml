@@ -2,8 +2,8 @@
 <Defs>
 
     <ThingCategoryDef>
-      <defName>Ammo6x24mmCharged</defName>
-      <label>6x24mm Charged</label>
+      <defName>Ammo2mmGauss</defName>
+      <label>2mmGauss</label>
       <parent>AmmoAdvanced</parent>
       <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
     </ThingCategoryDef>
@@ -11,137 +11,128 @@
 	<!-- ==================== AmmoSet ========================== -->
 
   <CombatExtended.AmmoSetDef>
-    <defName>AmmoSet_6x24mmCharged</defName>
-    <label>6x24mm Charged</label>
+    <defName>AmmoSet_2mmGauss</defName>
+    <label>2mm Gauss</label>
     <ammoTypes>
-      <Ammo_6x24mmCharged>Bullet_6x24mmCharged</Ammo_6x24mmCharged>
-      <Ammo_6x24mmCharged_AP>Bullet_6x24mmCharged_AP</Ammo_6x24mmCharged_AP>
-      <Ammo_6x24mmCharged_Ion>Bullet_6x24mmCharged_Ion</Ammo_6x24mmCharged_Ion>
+      <Ammo_2mmGauss>Bullet_2mmGauss</Ammo_2mmGauss>
+      <Ammo_2mmGauss_AP>Bullet_2mmGauss_AP</Ammo_2mmGauss_AP>
+      <Ammo_2mmGauss_API>Bullet_2mmGauss_API</Ammo_2mmGauss_API>
     </ammoTypes>
   </CombatExtended.AmmoSetDef>
 	
 	<!-- ==================== Ammo ========================== -->
 
-  <ThingDef Class="CombatExtended.AmmoDef" Name="6x24mmChargedBase" ParentName="SpacerSmallAmmoBase" Abstract="True">
-    <description>Charged shot ammo used by advanced assault rifle designs.</description>
+  <ThingDef Class="CombatExtended.AmmoDef" Name="2mmGaussBase" ParentName="SpacerSmallAmmoBase" Abstract="True">
+    <description>Metallic slug used in high-tech handheld coilguns.</description>
     <statBases>
-	  <Mass>0.01</Mass>
-	  <Bulk>0.03</Bulk>
+	  <Mass>0.009</Mass>
+	  <Bulk>0.01</Bulk>
     </statBases>
     <tradeTags>
       <li>CE_AutoEnableTrade</li>
       <li>CE_AutoEnableCrafting</li>
     </tradeTags>
     <thingCategories>
-      <li>Ammo6x24mmCharged</li>
+      <li>Ammo2mmGauss</li>
     </thingCategories>
+	<stackLimit>10000</stackLimit>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="6x24mmChargedBase">
-    <defName>Ammo_6x24mmCharged</defName>
-    <label>6x24mm Charged cartridge</label>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="2mmGaussBase">
+    <defName>Ammo_2mmGauss</defName>
+    <label>2mm Gauss Slug</label>
     <graphicData>
       <texPath>Things/Ammo/Charged/Regular</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>0.97</MarketValue>
+      <MarketValue>0.05</MarketValue>
     </statBases>
-    <ammoClass>Charged</ammoClass>
+    <ammoClass>Sabot</ammoClass>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="6x24mmChargedBase">
-    <defName>Ammo_6x24mmCharged_AP</defName>
-    <label>6x24mm Charged cartridge (Conc.)</label>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="2mmGaussBase">
+    <defName>Ammo_2mmGauss_AP</defName>
+    <label>2mm Gauss Slug (AP)</label>
     <graphicData>
       <texPath>Things/Ammo/Charged/Concentrated</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>0.97</MarketValue>
+      <MarketValue>0.09</MarketValue>
     </statBases>
-    <ammoClass>ChargedAP</ammoClass>
+    <ammoClass>ArmorPiercing</ammoClass>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="6x24mmChargedBase">
-    <defName>Ammo_6x24mmCharged_Ion</defName>
-    <label>6x24mm Charged cartridge (Ion)</label>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="2mmGaussBase">
+    <defName>Ammo_2mmGauss_API</defName>
+    <label>2mm Gauss Slug (API)</label>
     <graphicData>
-      <texPath>Things/Ammo/Charged/Ion</texPath>
+      <texPath>Things/Ammo/Charged/Concentrated</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <statBases>
-      <MarketValue>0.97</MarketValue>
+      <MarketValue>0.11</MarketValue>
     </statBases>
-    <ammoClass>Ionized</ammoClass>
+    <ammoClass>IncendiaryAP</ammoClass>
 	<generateAllowChance>0</generateAllowChance>
   </ThingDef>
 	
 	<!-- ================== Projectiles ================== -->
 
-  <ThingDef Class="CombatExtended.AmmoDef" Name="Base6x24mmChargedBullet" ParentName="BaseBullet" Abstract="true">
+  <ThingDef Class="CombatExtended.AmmoDef" Name="Base2mmGaussBullet" ParentName="BaseBullet" Abstract="true">
     <graphicData>
-      <texPath>Things/Projectile/Charge_Small</texPath>
+      <texPath>Things/Projectile/Bullet_Small</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>170</speed>
+      <speed>5000</speed>
     </projectile>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base6x24mmChargedBullet">
-    <defName>Bullet_6x24mmCharged</defName>
-    <label>charge shot</label>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base2mmGaussBullet">
+    <defName>Bullet_2mmGauss</defName>
+    <label>Gauss Slug</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>11</damageAmountBase>
-      <secondaryDamage>
-        <li>
-          <def>Bomb_Secondary</def>
-          <amount>7</amount>
-        </li>
-      </secondaryDamage>
-      <armorPenetrationBase>0.65</armorPenetrationBase>
+      <armorPenetrationBase>1.487</armorPenetrationBase>
     </projectile>
   </ThingDef>
 
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base6x24mmChargedBullet">
-    <defName>Bullet_6x24mmCharged_AP</defName>
-    <label>charge shot (Conc.)</label>
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base2mmGaussBullet">
+    <defName>Bullet_2mmGauss_AP</defName>
+    <label>Gauss Slug (AP)</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
-      <damageAmountBase>11</damageAmountBase>
+      <damageAmountBase>7</damageAmountBase>
+      <armorPenetrationBase>1.9</armorPenetrationBase>
+	  <speed>5500</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base2mmGaussBullet">
+    <defName>Bullet_2mmGauss_API</defName>
+    <label>Gauss Slug (API)</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>6</damageAmountBase>
       <secondaryDamage>
         <li>
-          <def>Bomb_Secondary</def>
+          <def>Flame_Secondary</def>
           <amount>3</amount>
         </li>
       </secondaryDamage>
-      <armorPenetrationBase>0.8</armorPenetrationBase>
-    </projectile>
-  </ThingDef>
-
-  <ThingDef Class="CombatExtended.AmmoDef" ParentName="Base6x24mmChargedBullet">
-    <defName>Bullet_6x24mmCharged_Ion</defName>
-    <label>charge shot (Ion)</label>
-    <projectile Class="CombatExtended.ProjectilePropertiesCE">
-      <damageAmountBase>11</damageAmountBase>
-      <secondaryDamage>
-        <li>
-          <def>EMP</def>
-          <amount>8</amount>
-        </li>
-      </secondaryDamage>
-      <armorPenetrationBase>0.65</armorPenetrationBase>
+      <armorPenetrationBase>1.55</armorPenetrationBase>
+	  <speed>3000</speed>
     </projectile>
   </ThingDef>
   
 	<!-- ==================== Recipes ========================== -->
 
   <RecipeDef ParentName="ChargeAmmoRecipeBase">
-    <defName>MakeAmmo_6x24mmCharged</defName>
-    <label>make 6x24mm Charged cartridge x100</label>
-    <description>Craft 100 6x24mm Charged cartridges.</description>
-    <jobString>Making 6x24mm Charged cartridges.</jobString>
+    <defName>MakeAmmo_2mmGauss</defName>
+    <label>make 2mm Gauss Slug x1000</label>
+    <description>Craft 1000 2mm Gauss Slugs.</description>
+    <jobString>Making 2mm Gauss Slugs.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -149,33 +140,34 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>12</count>
       </li>
       <li>
         <filter>
           <thingDefs>
-            <li>ComponentIndustrial</li>
+            <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>30</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
         <li>Plasteel</li>
-        <li>ComponentIndustrial</li>
+        <li>Uranium</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_6x24mmCharged>100</Ammo_6x24mmCharged>
+      <Ammo_2mmGauss>1000</Ammo_2mmGauss>
     </products>
+	<workAmount>9500</workAmount>
   </RecipeDef>
 
   <RecipeDef ParentName="ChargeAmmoRecipeBase">
-    <defName>MakeAmmo_6x24mmCharged_AP</defName>
-    <label>make 6x24mm Charged (Conc.) cartridge x100</label>
-    <description>Craft 100 6x24mm Charged (Conc.) cartridges.</description>
-    <jobString>Making 6x24mm Charged (Conc.) cartridges.</jobString>
+    <defName>MakeAmmo_2mmGauss_AP</defName>
+    <label>make 2mm Gauss Slug (AP) x1000</label>
+    <description>Craft 1000 2mm Gauss Slug (AP).</description>
+    <jobString>Making 2mm Gauss Slug (AP) cartridges.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -183,33 +175,34 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>12</count>
       </li>
       <li>
         <filter>
           <thingDefs>
-            <li>ComponentIndustrial</li>
+            <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>70</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
         <li>Plasteel</li>
-        <li>ComponentIndustrial</li>
+        <li>Uranium</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_6x24mmCharged_AP>100</Ammo_6x24mmCharged_AP>
+      <Ammo_2mmGauss_AP>1000</Ammo_2mmGauss_AP>
     </products>
+	<workAmount>10000</workAmount>
   </RecipeDef>
 
   <RecipeDef ParentName="ChargeAmmoRecipeBase">
-    <defName>MakeAmmo_6x24mmCharged_Ion</defName>
-    <label>make 6x24mm Charged (Ion) cartridge x100</label>
-    <description>Craft 100 6x24mm Charged (Ion) cartridges.</description>
-    <jobString>Making 6x24mm Charged (Ion) cartridges.</jobString>
+    <defName>MakeAmmo_2mmGauss_API</defName>
+    <label>make 2mm Gauss Slug (API) x1000</label>
+    <description>Craft 100 2mm Gauss Slug (API)s.</description>
+    <jobString>Making 2mm Gauss Slug (API)s.</jobString>
     <ingredients>
       <li>
         <filter>
@@ -217,26 +210,36 @@
             <li>Plasteel</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>12</count>
       </li>
       <li>
         <filter>
           <thingDefs>
-            <li>ComponentIndustrial</li>
+            <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>2</count>
+        <count>70</count>
+      </li>
+	   <li>
+        <filter>
+          <thingDefs>
+            <li>FSX</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
         <li>Plasteel</li>
-        <li>ComponentIndustrial</li>
+        <li>Uranium</li>
+		<li>FSX</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
-      <Ammo_6x24mmCharged_Ion>100</Ammo_6x24mmCharged_Ion>
+      <Ammo_2mmGauss_API>1000</Ammo_2mmGauss_API>
     </products>
+	<workAmount>15000</workAmount>
   </RecipeDef>
 	
 </Defs>
