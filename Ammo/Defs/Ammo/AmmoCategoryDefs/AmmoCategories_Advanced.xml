@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+   <CombatExtended.AmmoCategoryDef>
+    <defName>Lasgun_PLC</defName>
+    <label>laser blast</label>
+    <labelShort>las</labelShort>
+    <description>This charge pack generates a highly energetic photon beam when used.</description>
+  </CombatExtended.AmmoCategoryDef>
+  
+</Defs>

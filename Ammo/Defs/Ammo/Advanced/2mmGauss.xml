@@ -167,7 +167,7 @@
     <defName>MakeAmmo_2mmGauss_AP</defName>
     <label>make 2mm Gauss Slug (AP) x1000</label>
     <description>Craft 1000 2mm Gauss Slug (AP).</description>
-    <jobString>Making 2mm Gauss Slug (AP) cartridges.</jobString>
+    <jobString>Making 2mm Gauss Slug (AP)s.</jobString>
     <ingredients>
       <li>
         <filter>

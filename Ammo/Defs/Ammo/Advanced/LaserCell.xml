@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+    <ThingCategoryDef>
+      <defName>AmmoLaserCell</defName>
+      <label>LaserCell</label>
+      <parent>AmmoAdvanced</parent>
+      <iconPath>UI/Icons/ThingCategories/CaliberCharge</iconPath>
+    </ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+  <CombatExtended.AmmoSetDef>
+    <defName>AmmoSet_LaserCell</defName>
+    <label>PLC</label>
+    <ammoTypes>
+      <Ammo_LaserCell>Bullet_LaserCell</Ammo_LaserCell>
+      <Ammo_LaserCell_AP>Bullet_LaserCell_AP</Ammo_LaserCell_AP>
+      <Ammo_LaserCell_Ion>Bullet_LaserCell_Ion</Ammo_LaserCell_Ion>
+    </ammoTypes>
+  </CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="LaserCellBase" ParentName="SpacerSmallAmmoBase" Abstract="True">
+    <description>Disposable power cell for use in directed energy weapons. This one is optimised for LASERS.</description>
+    <statBases>
+	  <Mass>0.009</Mass>
+	  <Bulk>0.01</Bulk>
+    </statBases>
+    <tradeTags>
+      <li>CE_AutoEnableTrade</li>
+      <li>CE_AutoEnableCrafting</li>
+    </tradeTags>
+    <thingCategories>
+      <li>AmmoLaserCell</li>
+    </thingCategories>
+	<stackLimit>10000</stackLimit>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="LaserCellBase">
+    <defName>Ammo_LaserCell</defName>
+    <label>PLC</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Regular</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.05</MarketValue>
+    </statBases>
+    <ammoClass>Lasgun_PLC</ammoClass>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="LaserCellBase">
+    <defName>Ammo_LaserCell_OC</defName>
+    <label>PLC (Overcharged)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Concentrated</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.09</MarketValue>
+    </statBases>
+    <ammoClass>Lasgun_PLC</ammoClass>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="LaserCellBase">
+    <defName>Ammo_LaserCell_Ion</defName>
+    <label>PLC (Ion)</label>
+    <graphicData>
+      <texPath>Things/Ammo/Charged/Ion</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <statBases>
+      <MarketValue>0.11</MarketValue>
+    </statBases>
+    <ammoClass>Lasgun_PLC</ammoClass>
+	<generateAllowChance>0</generateAllowChance>
+  </ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+
+  <ThingDef Class="CombatExtended.AmmoDef" Name="BaseLaserCellBullet" ParentName="BaseBullet" Abstract="true">
+    <graphicData>
+      <texPath>Things/Projectile/laser_beam_red</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageDef>AT_Laser_Small</damageDef>
+      <speed>50000</speed>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseLaserCellBullet">
+    <defName>Bullet_LaserCell</defName>
+    <label>Laser Blast</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>11</damageAmountBase>
+      <armorPenetrationBase>1.1</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseLaserCellBullet">
+    <defName>Bullet_LaserCell_OC</defName>
+    <label>Laser Blast (Overcharged)</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>12</damageAmountBase>
+      <armorPenetrationBase>2.2</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef Class="CombatExtended.AmmoDef" ParentName="BaseLaserCellBullet">
+    <defName>Bullet_LaserCell_Ion</defName>
+    <label>GLaser Blast (Ion)</label>
+    <projectile Class="CombatExtended.ProjectilePropertiesCE">
+      <damageAmountBase>7</damageAmountBase>
+      <secondaryDamage>
+        <li>
+          <def>EMP</def>
+          <amount>11</amount>
+        </li>
+      </secondaryDamage>
+      <armorPenetrationBase>0.666</armorPenetrationBase>
+    </projectile>
+  </ThingDef>
+  
+	<!-- ==================== Recipes ========================== -->
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_LaserCell</defName>
+    <label>make PLC x1000</label>
+    <description>Craft 1000 PLCs.</description>
+    <jobString>Making PLCs.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>30</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Uranium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_LaserCell>1000</Ammo_LaserCell>
+    </products>
+	<workAmount>9500</workAmount>
+  </RecipeDef>
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_LaserCell_OC</defName>
+    <label>make PLC (OC) x1000</label>
+    <description>Craft 1000 PLC (OC).</description>
+    <jobString>Making PLC (OC).</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>70</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Uranium</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_LaserCell_OC>1000</Ammo_LaserCell_OC>
+    </products>
+	<workAmount>10000</workAmount>
+  </RecipeDef>
+
+  <RecipeDef ParentName="ChargeAmmoRecipeBase">
+    <defName>MakeAmmo_LaserCell_Ion</defName>
+    <label>make PLC (Ion) x1000</label>
+    <description>Craft 1000 PLC (Ion).</description>
+    <jobString>Making PLC (Ion)s.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Plasteel</li>
+          </thingDefs>
+        </filter>
+        <count>12</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Uranium</li>
+          </thingDefs>
+        </filter>
+        <count>70</count>
+      </li>
+	   <li>
+        <filter>
+          <thingDefs>
+            <li>FSX</li>
+          </thingDefs>
+        </filter>
+        <count>4</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>Plasteel</li>
+        <li>Uranium</li>
+		<li>FSX</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <products>
+      <Ammo_LaserCell_Ion>1000</Ammo_LaserCell_Ion>
+    </products>
+	<workAmount>15000</workAmount>
+  </RecipeDef>
+	
+</Defs>
