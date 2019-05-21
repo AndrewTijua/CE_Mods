@@ -132,7 +132,7 @@
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>17</muzzleFlashScale>
 		<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
-    	<burstShotCount>2</burstShotCount>
+    	<burstShotCount>5</burstShotCount>
       </li>
     </verbs>
     <comps>
@@ -209,7 +209,7 @@
       <SwayFactor>2.3</SwayFactor>
       <Bulk>5.00</Bulk>
       <Mass>3.00</Mass>
-      <RangedWeapon_Cooldown>0.85</RangedWeapon_Cooldown>
+      <RangedWeapon_Cooldown>0.22</RangedWeapon_Cooldown>
     </statBases>
     <costList>
       <Steel>65</Steel>
@@ -223,7 +223,7 @@
         <verbClass>CombatExtended.Verb_ShootCE</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_2mmGauss</defaultProjectile>
-        <burstShotCount>15</burstShotCount>
+        <burstShotCount>30</burstShotCount>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
         <warmupTime>1</warmupTime>
         <range>20</range>
@@ -241,7 +241,7 @@
       <li Class="CombatExtended.CompProperties_FireModes">
         <aiUseBurstMode>TRUE</aiUseBurstMode>
         <aiAimMode>Snapshot</aiAimMode>
-        <aimedBurstShotCount>5</aimedBurstShotCount>
+        <aimedBurstShotCount>15</aimedBurstShotCount>
       </li>
     </comps>
 	<weaponTags>
