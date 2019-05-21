@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>Laser Weapons CE</name>
+    <author>AndrewTijua</author>
+    <url></url>
+    <supportedVersions>
+        <li>1.0</li>
+    </supportedVersions>
+    <description>Weapon mod that adds DEWs to CE.</description>
+
+</ModMetaData>

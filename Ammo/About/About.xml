@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>AT Ammos CE</name>
+    <author>AndrewTijua</author>
+    <url></url>
+    <supportedVersions>
+        <li>1.0</li>
+    </supportedVersions>
+    <description>Stopgap mod to add in ammo stuff before pushed in CE.</description>
+
+</ModMetaData>
