@@ -113,7 +113,7 @@
     <defName>Bullet_LaserCell_Ion</defName>
     <label>GLaser Blast (Ion)</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
-      <damageAmountBase>7</damageAmountBase>
+      <damageAmountBase>11</damageAmountBase>
       <secondaryDamage>
         <li>
           <def>EMP</def>
@@ -158,7 +158,7 @@
     <products>
       <Ammo_LaserCell>1000</Ammo_LaserCell>
     </products>
-	<workAmount>9500</workAmount>
+	<workAmount>5000</workAmount>
   </RecipeDef>
 
   <RecipeDef ParentName="ChargeAmmoRecipeBase">
@@ -181,7 +181,7 @@
             <li>Uranium</li>
           </thingDefs>
         </filter>
-        <count>70</count>
+        <count>50</count>
       </li>
     </ingredients>
     <fixedIngredientFilter>
@@ -193,7 +193,7 @@
     <products>
       <Ammo_LaserCell_OC>1000</Ammo_LaserCell_OC>
     </products>
-	<workAmount>10000</workAmount>
+	<workAmount>7000</workAmount>
   </RecipeDef>
 
   <RecipeDef ParentName="ChargeAmmoRecipeBase">
@@ -218,26 +218,17 @@
         </filter>
         <count>70</count>
       </li>
-	   <li>
-        <filter>
-          <thingDefs>
-            <li>FSX</li>
-          </thingDefs>
-        </filter>
-        <count>4</count>
-      </li>
     </ingredients>
     <fixedIngredientFilter>
       <thingDefs>
         <li>Plasteel</li>
         <li>Uranium</li>
-		<li>FSX</li>
       </thingDefs>
     </fixedIngredientFilter>
     <products>
       <Ammo_LaserCell_Ion>1000</Ammo_LaserCell_Ion>
     </products>
-	<workAmount>15000</workAmount>
+	<workAmount>7000</workAmount>
   </RecipeDef>
 	
 </Defs>
