@@ -4,7 +4,7 @@
 
   <ThingDef ParentName="BaseHumanMakeableGun_CE">
     <defName>CG_Gauss_Rifle</defName>
-    <label>G-1 Handheld Coilgun</label>
+    <label>G1 Handheld Coilgun</label>
     <description>A relatively modern weapon that launches depleted uranium slugs at incredible velocities.</description>
     <graphicData>
       <texPath>Things/Weapons/Gauss_1</texPath>
@@ -98,7 +98,7 @@
 
   <ThingDef ParentName="BaseHumanMakeableGun_CE">
     <defName>CG_Gauss_Sniper</defName>
-    <label>G-2 Precision Coilgun</label>
+    <label>G2 Precision Coilgun</label>
     <description>A relatively modern weapon that launches depleted uranium slugs at incredible velocities. This one has a big scope on it.</description>
     <graphicData>
       <texPath>Things/Weapons/Gauss_2</texPath>
@@ -126,11 +126,13 @@
         <verbClass>CombatExtended.Verb_ShootCE</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
         <defaultProjectile>Bullet_2mmGauss</defaultProjectile>
-        <warmupTime>3.6</warmupTime>
-        <range>95</range>
+        <warmupTime>2.6</warmupTime>
+        <range>115</range>
         <soundCast>Shot_AssaultRifle</soundCast>
         <soundCastTail>GunTail_Heavy</soundCastTail>
         <muzzleFlashScale>17</muzzleFlashScale>
+		<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+    	<burstShotCount>2</burstShotCount>
       </li>
     </verbs>
     <comps>
@@ -141,6 +143,8 @@
       </li>
       <li Class="CombatExtended.CompProperties_FireModes">
         <aiAimMode>AimedShot</aiAimMode>
+		<noSingleShot>true</noSingleShot>
+		<aimedBurstShotCount>2</aimedBurstShotCount>
       </li>
     </comps>
 	<weaponTags>
@@ -185,13 +189,13 @@
       </tools>
   </ThingDef>
 
-</Defs>
+
 
 <!-- ==================== Gauss SMG ==================== -->
 
   <ThingDef ParentName="BaseHumanMakeableGun_CE">
     <defName>CG_Gauss_SMG</defName>
-    <label>G-3 Rapid Launch Coilgun</label>
+    <label>G3 Rapid Launch Coilgun</label>
     <description>An extremely rapidly firing close range coilgun. Will tear through almost anything, but is easily outranged and has huge recoil. Can be fired with one hand.</description>
     <graphicData>
       <texPath>Things/Weapons/Gauss_3</texPath>
@@ -282,3 +286,5 @@
         </li>
       </tools>
   </ThingDef>
+
+  </Defs>
