@@ -87,7 +87,7 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>AT_Laser_Small</damageDef>
-      <speed>50000</speed>
+      <speed>5000</speed>
     </projectile>
   </ThingDef>
 
@@ -96,6 +96,12 @@
     <label>Laser Blast</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>11</damageAmountBase>
+	  <secondaryDamage>
+		<li>
+          <def>Bomb_Secondary</def>
+          <amount>10</amount>
+        </li>
+      </secondaryDamage>
       <armorPenetrationBase>1.1</armorPenetrationBase>
     </projectile>
   </ThingDef>
@@ -105,6 +111,12 @@
     <label>Laser Blast (Overcharged)</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>12</damageAmountBase>
+	  <secondaryDamage>
+		<li>
+          <def>Bomb_Secondary</def>
+          <amount>20</amount>
+        </li>
+      </secondaryDamage>
       <armorPenetrationBase>2.2</armorPenetrationBase>
     </projectile>
   </ThingDef>
@@ -118,6 +130,10 @@
         <li>
           <def>EMP</def>
           <amount>11</amount>
+        </li>
+		<li>
+          <def>Bomb_Secondary</def>
+          <amount>10</amount>
         </li>
       </secondaryDamage>
       <armorPenetrationBase>0.666</armorPenetrationBase>

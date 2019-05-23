@@ -287,4 +287,95 @@
       </tools>
   </ThingDef>
 
+  <!-- ==================== Gauss Autopistol ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun_CE">
+    <defName>CG_Gauss_Pistol</defName>
+    <label>G4 Handheld MagGun</label>
+    <description>Compact sidearm utilising coilgun technologies. Issued to frontline officers in highly advanced militaries.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Gauss_4</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Autopistol</soundInteract>
+    <statBases>
+      <WorkToMake>25500</WorkToMake>
+      <SightsEfficiency>0.8</SightsEfficiency>
+      <ShotSpread>0.12</ShotSpread>
+      <SwayFactor>1.1</SwayFactor>
+      <Bulk>2.00</Bulk>
+      <Mass>1.00</Mass>
+      <RangedWeapon_Cooldown>0.22</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <Plasteel>25</Plasteel>
+	  <Chemfuel>10</Chemfuel>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>3.25</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_2mmGauss</defaultProjectile>
+        <warmupTime>0.4</warmupTime>
+        <range>16</range>
+        <soundCast>Shot_Autopistol</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>9</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>17</magazineSize>
+        <reloadTime>3</reloadTime>
+        <ammoSet>AmmoSet_2mmGauss</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>Snapshot</aiAimMode>
+      </li>
+    </comps>
+	<weaponTags>
+      <li>AdvancedGun</li>
+	  <li>CE_Sidearm</li>
+      <li>CE_OneHandedWeapon</li>
+    </weaponTags>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+    </recipeMaker>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>9</power>
+          <cooldownTime>1.8</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetration>0.11</armorPenetration>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.118</armorPenetration>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.086</armorPenetration>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>
   </Defs>

@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Defs>
+ <!-- ==================== Laser Rifle ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun_CE">
+    <defName>CL_Laser_Rifle</defName>
+    <label>L1 Lasgun</label>
+    <description>Handheld laser DEW, derived from original Terran designs.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Laser_1</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>50500</WorkToMake>
+      <SightsEfficiency>1.1</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.3</SwayFactor>
+      <Bulk>4.00</Bulk>
+      <Mass>2.00</Mass>
+      <RangedWeapon_Cooldown>0.33</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <Plasteel>25</Plasteel>
+	  <Chemfuel>10</Chemfuel>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.77</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_LaserCell</defaultProjectile>
+        <burstShotCount>10</burstShotCount>
+        <ticksBetweenBurstShots>3</ticksBetweenBurstShots>
+        <warmupTime>0.5</warmupTime>
+        <range>65</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>5</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>50</magazineSize>
+        <reloadTime>4</reloadTime>
+        <ammoSet>AmmoSet_LaserCell</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiUseBurstMode>TRUE</aiUseBurstMode>
+        <aiAimMode>AimedShot</aiAimMode>
+        <aimedBurstShotCount>5</aimedBurstShotCount>
+      </li>
+    </comps>
+	<weaponTags>
+      <li>AdvancedGun</li>
+    </weaponTags>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+    </recipeMaker>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>9</power>
+          <cooldownTime>1.8</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetration>0.11</armorPenetration>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.118</armorPenetration>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.086</armorPenetration>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>
+  
+ <!-- ==================== Laser Sniper ==================== -->
+
+  <ThingDef ParentName="BaseHumanMakeableGun_CE">
+    <defName>CL_Laser_Rifle</defName>
+    <label>L2 Precision Laser</label>
+    <description>Handheld laser DEW, derived from original Terran designs. This one is very similar to the L1, but is optimised for long range warfare.</description>
+    <graphicData>
+      <texPath>Things/Weapons/Laser_2</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <statBases>
+      <WorkToMake>60500</WorkToMake>
+      <SightsEfficiency>7.0</SightsEfficiency>
+      <ShotSpread>0.01</ShotSpread>
+      <SwayFactor>1.1</SwayFactor>
+      <Bulk>12.00</Bulk>
+      <Mass>3.00</Mass>
+      <RangedWeapon_Cooldown>0.33</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+      <Steel>65</Steel>
+      <ComponentIndustrial>10</ComponentIndustrial>
+      <Plasteel>25</Plasteel>
+	  <Chemfuel>10</Chemfuel>
+    </costList>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>0.85</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_LaserCell</defaultProjectile>
+        <warmupTime>1</warmupTime>
+        <range>115</range>
+        <soundCast>Shot_AssaultRifle</soundCast>
+        <soundCastTail>GunTail_Heavy</soundCastTail>
+        <muzzleFlashScale>5</muzzleFlashScale>
+      </li>
+    </verbs>
+    <comps>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>50</magazineSize>
+        <reloadTime>4</reloadTime>
+        <ammoSet>AmmoSet_LaserCell</ammoSet>
+      </li>
+      <li Class="CombatExtended.CompProperties_FireModes">
+	  <aiAimMode>AimedShot</aiAimMode>
+      </li>
+    </comps>
+	<weaponTags>
+	<li>SniperRifle</li>
+      <li>AdvancedGun</li>
+    </weaponTags>
+    <recipeMaker>
+      <researchPrerequisite>ChargedShot</researchPrerequisite>
+    </recipeMaker>
+      <tools>
+        <li Class="CombatExtended.ToolCE">
+          <label>stock</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>9</power>
+          <cooldownTime>1.8</cooldownTime>
+          <chanceFactor>1.5</chanceFactor>
+          <armorPenetration>0.11</armorPenetration>
+          <linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>barrel</label>
+          <capacities>
+            <li>Blunt</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.118</armorPenetration>
+          <linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+        </li>
+        <li Class="CombatExtended.ToolCE">
+          <label>muzzle</label>
+          <capacities>
+            <li>Poke</li>
+          </capacities>
+          <power>10</power>
+          <cooldownTime>1.9</cooldownTime>
+          <armorPenetration>0.086</armorPenetration>
+          <linkedBodyPartsGroup>Muzzle</linkedBodyPartsGroup>
+        </li>
+      </tools>
+  </ThingDef>

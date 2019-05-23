@@ -87,7 +87,7 @@
     </graphicData>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageDef>Bullet</damageDef>
-      <speed>2000</speed>
+      <speed>1000</speed>
     </projectile>
   </ThingDef>
 
@@ -96,6 +96,12 @@
     <label>Gauss Slug</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>22</damageAmountBase>
+	  <secondaryDamage>
+		<li>
+          <def>Bomb_Secondary</def>
+          <amount>10</amount>
+        </li>
+      </secondaryDamage>
       <armorPenetrationBase>1.487</armorPenetrationBase>
     </projectile>
   </ThingDef>
@@ -105,8 +111,14 @@
     <label>Gauss Slug (AP)</label>
     <projectile Class="CombatExtended.ProjectilePropertiesCE">
       <damageAmountBase>20</damageAmountBase>
+	  <secondaryDamage>
+		<li>
+          <def>Bomb_Secondary</def>
+          <amount>10</amount>
+        </li>
+      </secondaryDamage>
       <armorPenetrationBase>1.9</armorPenetrationBase>
-	  <speed>2500</speed>
+	  <speed>1750</speed>
     </projectile>
   </ThingDef>
 
@@ -122,11 +134,11 @@
         </li>
 		<li>
           <def>Bomb_Secondary</def>
-          <amount>5</amount>
+          <amount>15</amount>
         </li>
       </secondaryDamage>
       <armorPenetrationBase>1.55</armorPenetrationBase>
-	  <speed>1000</speed>
+	  <speed>750</speed>
     </projectile>
   </ThingDef>
   
