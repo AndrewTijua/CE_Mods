@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+	
+	<CombatExtended.AmmoCategoryDef>
+		<defName>LeadBall</defName>
+		<label>lead ball</label>
+		<description>A loose fitting metal ball. Fairly innacurate due to poor aerodynamics, but inflicts large wounds due to the hitting power and large diameter of the projectile.</description>
+	</CombatExtended.AmmoCategoryDef>
+	
+
+	<ThingCategoryDef>
+		<defName>AmmoLeadShot</defName>
+		<label>Lead Shot</label>
+		<parent>AmmoRifles</parent>
+    <iconPath>UI/Icons/ThingCategories/CaliberRifle</iconPath>
+	</ThingCategoryDef>
+	
+	<!-- ==================== AmmoSet ========================== -->
+
+	<CombatExtended.AmmoSetDef>
+		<defName>AmmoSet_LeadShot</defName>
+		<label>Musket Ball</label>
+		<ammoTypes>
+			<Ammo_LeadShot>Bullet_LeadShot</Ammo_LeadShot>
+		</ammoTypes>
+	</CombatExtended.AmmoSetDef>
+	
+	<!-- ==================== Ammo ========================== -->
+
+	<ThingDef Class="CombatExtended.AmmoDef" Name="LeadShotBase" ParentName="SmallAmmoBase" Abstract="True">
+		<description>A solid lead projectile fired from a musket.</description>
+		<statBases>
+		<Mass>0.05</Mass>
+		<Bulk>0.07</Bulk>
+		</statBases>
+	<tradeTags>
+		<li>CE_AutoEnableTrade</li>
+	</tradeTags>
+		<thingCategories>
+			<li>AmmoLeadShot</li>
+		</thingCategories>
+	</ThingDef>
+
+	<ThingDef Class="CombatExtended.AmmoDef" ParentName="LeadShotBase">
+		<defName>Ammo_LeadShot</defName>
+		<label>Musket Ball</label>
+		<graphicData>
+			<texPath>Things/Ammo/Medieval/LeadShot</texPath>
+			<graphicClass>Graphic_StackCount</graphicClass>
+		</graphicData>
+		<statBases>
+			<MarketValue>0.05</MarketValue>
+		</statBases>
+		<ammoClass>LeadBall</ammoClass>
+	</ThingDef>
+	
+	<!-- ================== Projectiles ================== -->
+	
+	<ThingDef Name="LeadShotBullet" ParentName="BaseBullet" Abstract="true">
+		<graphicData>
+			<texPath>Things/Projectile/Bullet_big</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<projectile>
+			<damageDef>Bullet</damageDef>
+			<speed>85</speed>
+		</projectile>
+	</ThingDef>
+
+	<ThingDef ParentName="LeadShotBullet">
+		<defName>Bullet_LeadShot</defName>
+		<label>Musket Ball</label>
+		<projectile Class="CombatExtended.ProjectilePropertiesCE">
+			<damageDef>Bullet</damageDef>		
+			<damageAmountBase>35</damageAmountBase>
+			<armorPenetrationBase>0.35</armorPenetrationBase>
+		</projectile>
+	</ThingDef>
+  
+	<!-- ==================== Recipes ========================== -->
+
+	<RecipeDef ParentName="AmmoRecipeBase">
+		<defName>MakeAmmo_LeadShot</defName>
+		<label>make musket ball x500</label>
+		<description>Craft 500 musket balls.</description>
+		<jobString>Making musket balls.</jobString>
+		<ingredients>
+			<li>
+				<filter>
+					<thingDefs>
+						<li>Steel</li>
+					</thingDefs>
+				</filter>
+				<count>8</count>
+			</li>
+		</ingredients>
+		<fixedIngredientFilter>
+			<thingDefs>
+				<li>Steel</li>
+			</thingDefs>
+		</fixedIngredientFilter>
+		<products>
+			<Ammo_LeadShot>500</Ammo_LeadShot>
+		</products>
+    	<workAmount>5500</workAmount>
+        <recipeUsers>
+          <li>FueledSmithy</li>
+	      <li>ElectricSmithy</li>
+        </recipeUsers>
+	</RecipeDef>
+	
+</Defs>

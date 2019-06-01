@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- ==================== Weapon List ==================== 
-Lead Ball (new):
+Lead Shot (new):
 Brown Bess (w/ bayonet)
 Baker Rifle
 Enfield 1853 Rifle
@@ -23,7 +23,7 @@ L106A1 (SIG P229 variant)
 L131A1 (Glock 17 Variant)
 
 7.62 NATO:
-!L1A1 SLR (FAL variant) (already in CE Guns)
+---L1A1 SLR (FAL variant) (already in CE Guns)
 L7A2 FN MAG
 L129A1 Marksmans Rifle
 
@@ -38,69 +38,311 @@ L2A1 ILAW (AT4)
 
 
 <Defs>
+
  <!-- ==================== Set up parents ==================== -->
 
-     <ThingDef Name="BaseGun_ATGB" Abstract="True">
-    <category>Item</category>
-    <thingClass>ThingWithComps</thingClass>
-    <equipmentType>Primary</equipmentType>
-    <pathCost>10</pathCost>
-    <useHitPoints>True</useHitPoints>
-    <selectable>True</selectable>
+	<ThingDef Name="BaseGun_ATGB" Abstract="True">
+		<category>Item</category>
+		<thingClass>ThingWithComps</thingClass>
+		<equipmentType>Primary</equipmentType>
+		<pathCost>10</pathCost>
+		<useHitPoints>True</useHitPoints>
+		<selectable>True</selectable>
+		<graphicData>
+		<onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+		</graphicData>
+		<drawGUIOverlay>true</drawGUIOverlay>
+		<statBases>
+		<MaxHitPoints>100</MaxHitPoints>
+		<Flammability>1.0</Flammability>
+		<DeteriorationRate>2</DeteriorationRate>
+		<SellPriceFactor>0.5</SellPriceFactor>
+		</statBases>
+		<altitudeLayer>Item</altitudeLayer>
+		<alwaysHaulable>True</alwaysHaulable>
+		<tickerType>Never</tickerType>
+		<smeltable>true</smeltable>
+		<thingCategories>
+		<li>WeaponsRanged</li>
+		</thingCategories>
+		<inspectorTabs>
+		<li>ITab_Art</li>
+		</inspectorTabs>
+		<comps>
+		<li Class="CompProperties_Forbiddable" />
+		<li>
+			<compClass>CompEquippable</compClass>
+		</li>
+		<li>
+			<compClass>CompQuality</compClass>
+		</li>
+		<li Class="CompProperties_Art">
+			<nameMaker>NamerArtWeaponGun</nameMaker>
+			<descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+			<minQualityForArtistic>Excellent</minQualityForArtistic>
+		</li>
+		</comps>
+		<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>stock</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.8</cooldownTime>
+				<armorPenetration>0.11</armorPenetration>
+				<linkedBodyPartsGroup>Stock</linkedBodyPartsGroup>
+			</li>
+			<li Class="CombatExtended.ToolCE">
+				<label>barrel</label>
+				<capacities>
+					<li>Blunt</li>
+				</capacities>
+				<power>9</power>
+				<cooldownTime>1.9</cooldownTime>
+				<armorPenetration>0.118</armorPenetration>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+			</li>
+				<li Class="CombatExtended.ToolCE">
+				<label>muzzle</label>
+				<capacities>
+					<li>Poke</li>
+				</capacities>
+				<power>8</power>
+				<cooldownTime>1.9</cooldownTime>
+				<armorPenetration>0.086</armorPenetration>
+				<linkedBodyPartsGroup>Barrel</linkedBodyPartsGroup>
+				</li>
+		</tools>
+	</ThingDef>
+
+	<ThingDef Name="BaseMakeableGun_ATGB" ParentName="BaseGun_ATGB" Abstract="True">
+		<recipeMaker>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<techLevel>Industrial</techLevel>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<recipeUsers>
+			<li>TableMachining</li>
+		</recipeUsers>
+		<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+		<researchPrerequisite>Gunsmithing</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+	
+	<ThingDef Name="BaseMakeableGun_ATGB_musket" ParentName="BaseGun_ATGB" Abstract="True">
+		<recipeMaker>
+		<workSpeedStat>SmithingSpeed</workSpeedStat>
+		<workSkill>Crafting</workSkill>
+		<techLevel>Medieval</techLevel>
+		<effectWorking>Smith</effectWorking>
+		<soundWorking>Recipe_Smith</soundWorking>
+		<recipeUsers>
+			<li>ElectricSmithy</li>
+			<li>FueledSmithy</li>
+		</recipeUsers>
+		<unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+		<researchPrerequisite>Smithing</researchPrerequisite>
+		</recipeMaker>
+	</ThingDef>
+
+
+	<ThingDef Name="BaseHumanMakeableGun_ATGB" ParentName="BaseMakeableGun_ATGB" Abstract="True">
+		<weaponTags>
+		<li>Gun</li>
+		</weaponTags>
+	</ThingDef>
+	
+	<ThingDef Name="BaseHumanMakeableGun_ATGB_musket" ParentName="BaseMakeableGun_ATGB_musket" Abstract="True">
+		<weaponTags>
+		<li>Gun</li>
+		</weaponTags>
+	</ThingDef>
+
+<!-- Lead Shot Weapons -->
+
+
+<!-- Brown Bess -->
+<ThingDef ParentName="BaseHumanMakeableGun_ATGB_musket">
+    <defName>ATGB_Gun_BrownBess</defName>
+    <label>Brown Bess Musket</label>
+    <description>Antiquated smoothbore musket. Inaccurate and slow to load, this gun packs quite the punch against unarmoured foes.</description>
     <graphicData>
-      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+      <texPath>Things/Weapons/BrownBess</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
-    <drawGUIOverlay>true</drawGUIOverlay>
+    <soundInteract>Interact_Rifle</soundInteract>
     <statBases>
-      <MaxHitPoints>100</MaxHitPoints>
-      <Flammability>1.0</Flammability>
-      <DeteriorationRate>2</DeteriorationRate>
-      <SellPriceFactor>0.5</SellPriceFactor>
+      <WorkToMake>5000</WorkToMake>
+      <SightsEfficiency>1</SightsEfficiency>
+      <ShotSpread>0.2</ShotSpread>
+      <SwayFactor>1.92</SwayFactor>
+      <Bulk>14.9</Bulk>
+      <Mass>4.80</Mass>
+      <RangedWeapon_Cooldown>0.87</RangedWeapon_Cooldown>
     </statBases>
-    <altitudeLayer>Item</altitudeLayer>
-    <alwaysHaulable>True</alwaysHaulable>
-    <tickerType>Never</tickerType>
-    <techLevel>Industrial</techLevel>
-    <smeltable>true</smeltable>
-    <thingCategories>
-      <li>WeaponsRanged</li>
-    </thingCategories>
-    <inspectorTabs>
-      <li>ITab_Art</li>
-    </inspectorTabs>
+    <weaponTags>
+      <li>SimpleGun</li>
+    </weaponTags>
+    <costList>
+      <Steel>30</Steel>
+      <!-- <ComponentIndustrial>0</ComponentIndustrial> -->
+      <WoodLog>15</WoodLog>
+    </costList>
+    <recipeMaker>
+    </recipeMaker>
+    <verbs>
+      <li Class="CombatExtended.VerbPropertiesCE">
+        <recoilAmount>1.87</recoilAmount>
+        <verbClass>CombatExtended.Verb_ShootCE</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <defaultProjectile>Bullet_LeadShot</defaultProjectile>
+        <warmupTime>1.1</warmupTime>
+        <range>24</range>
+        <soundCast>HeavyMG</soundCast>
+        <soundCastTail>GunTail_Medium</soundCastTail>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
     <comps>
-      <li Class="CompProperties_Forbiddable" />
-      <li>
-        <compClass>CompEquippable</compClass>
+      <li Class="CombatExtended.CompProperties_AmmoUser">
+        <magazineSize>1</magazineSize>
+        <reloadTime>5</reloadTime>
+        <ammoSet>AmmoSet_LeadShot</ammoSet>
       </li>
-      <li>
-        <compClass>CompQuality</compClass>
-      </li>
-      <li Class="CompProperties_Art">
-        <nameMaker>NamerArtWeaponGun</nameMaker>
-        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
-        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      <li Class="CombatExtended.CompProperties_FireModes">
+        <aiAimMode>AimedShot</aiAimMode>
       </li>
     </comps>
+	<tools>
+			<li Class="CombatExtended.ToolCE">
+				<label>bayonet</label>
+				<capacities>
+					<li>Poke</li>
+					<li>Stab</li>
+				</capacities>
+				<power>15.5</power>
+				<cooldownTime>1.35</cooldownTime>
+				<chanceFactor>2.33</chanceFactor>
+				<armorPenetration>0.28</armorPenetration>
+				<linkedBodyPartsGroup>Bayonet</linkedBodyPartsGroup>
+			</li>
+		</tools>
+	
   </ThingDef>
-
-  <ThingDef Name="BaseMakeableGun_ATGB" ParentName="BaseGun_ATGB" Abstract="True">
-    <recipeMaker>
-      <workSpeedStat>SmithingSpeed</workSpeedStat>
-      <workSkill>Crafting</workSkill>
-      <effectWorking>Smith</effectWorking>
-      <soundWorking>Recipe_Smith</soundWorking>
-      <recipeUsers>
-        <li>TableMachining</li>
-      </recipeUsers>
-      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
-      <researchPrerequisite>Gunsmithing</researchPrerequisite>
-    </recipeMaker>
-  </ThingDef>
-  </Defs>
   
-  <ThingDef Name="BaseHumanMakeableGun_ATGB" ParentName="BaseMakeableGun_ATGB" Abstract="True">
-    <weaponTags>
-      <li>Gun</li>
-    </weaponTags>
-  </ThingDef>
+  
+<!-- Baker Rifle -->
+<ThingDef ParentName="BaseHumanMakeableGun_ATGB_musket">
+	<defName>ATGB_Gun_BakerRifle</defName>
+	<label>Baker Rifle</label>
+	<description>Antiquated rifled musket. Rather accurate but slow to load, this gun packs quite the punch against unarmoured foes.</description>
+	<graphicData>
+	  <texPath>Things/Weapons/BakerRifle</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<soundInteract>Interact_Rifle</soundInteract>
+	<statBases>
+	  <WorkToMake>15000</WorkToMake>
+	  <SightsEfficiency>1</SightsEfficiency>
+	  <ShotSpread>0.02</ShotSpread>
+	  <SwayFactor>2.05</SwayFactor>
+	  <Bulk>14.9</Bulk>
+	  <Mass>4.80</Mass>
+	  <RangedWeapon_Cooldown>0.87</RangedWeapon_Cooldown>
+	</statBases>
+	<weaponTags>
+	  <li>SimpleGun</li>
+	</weaponTags>
+	<costList>
+	  <Steel>50</Steel>
+	  <!-- <ComponentIndustrial>0</ComponentIndustrial> -->
+	  <WoodLog>15</WoodLog>
+	</costList>
+	<recipeMaker>
+	</recipeMaker>
+	<verbs>
+	  <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>1.87</recoilAmount>
+		<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+		<hasStandardCommand>true</hasStandardCommand>
+		<defaultProjectile>Bullet_LeadShot</defaultProjectile>
+		<warmupTime>1.1</warmupTime>
+		<range>24</range>
+		<soundCast>HeavyMG</soundCast>
+		<soundCastTail>GunTail_Medium</soundCastTail>
+		<muzzleFlashScale>14</muzzleFlashScale>
+	  </li>
+	</verbs>
+	<comps>
+	  <li Class="CombatExtended.CompProperties_AmmoUser">
+		<magazineSize>1</magazineSize>
+		<reloadTime>7</reloadTime>
+		<ammoSet>AmmoSet_LeadShot</ammoSet>
+	  </li>
+	  <li Class="CombatExtended.CompProperties_FireModes">
+		<aiAimMode>AimedShot</aiAimMode>
+	  </li>
+	</comps>
+
+</ThingDef>
+
+<!-- 1853 Enfield -->
+<ThingDef ParentName="BaseHumanMakeableGun_ATGB_musket">
+	<defName>ATGB_Gun_EnfieldBreech</defName>
+	<label>1853 Enfield</label>
+	<description>Antiquated rifled breech-loading musket. Rather accurate and somewhat, this gun packs quite the punch against unarmoured foes.</description>
+	<graphicData>
+	  <texPath>Things/Weapons/EnfieldBreech</texPath>
+	  <graphicClass>Graphic_Single</graphicClass>
+	</graphicData>
+	<soundInteract>Interact_Rifle</soundInteract>
+	<statBases>
+	  <WorkToMake>17000</WorkToMake>
+	  <SightsEfficiency>1</SightsEfficiency>
+	  <ShotSpread>0.02</ShotSpread>
+	  <SwayFactor>2.05</SwayFactor>
+	  <Bulk>14.9</Bulk>
+	  <Mass>4.80</Mass>
+	  <RangedWeapon_Cooldown>0.87</RangedWeapon_Cooldown>
+	</statBases>
+	<weaponTags>
+	  <li>SimpleGun</li>
+	</weaponTags>
+	<costList>
+	  <Steel>65</Steel>
+	  <!-- <ComponentIndustrial>0</ComponentIndustrial> -->
+	  <WoodLog>15</WoodLog>
+	</costList>
+	<recipeMaker>
+	</recipeMaker>
+	<verbs>
+	  <li Class="CombatExtended.VerbPropertiesCE">
+		<recoilAmount>1.87</recoilAmount>
+		<verbClass>CombatExtended.Verb_ShootCE</verbClass>
+		<hasStandardCommand>true</hasStandardCommand>
+		<defaultProjectile>Bullet_LeadShot</defaultProjectile>
+		<warmupTime>1.1</warmupTime>
+		<range>24</range>
+		<soundCast>HeavyMG</soundCast>
+		<soundCastTail>GunTail_Medium</soundCastTail>
+		<muzzleFlashScale>14</muzzleFlashScale>
+	  </li>
+	</verbs>
+	<comps>
+	  <li Class="CombatExtended.CompProperties_AmmoUser">
+		<magazineSize>1</magazineSize>
+		<reloadTime>2</reloadTime>
+		<ammoSet>AmmoSet_LeadShot</ammoSet>
+	  </li>
+	  <li Class="CombatExtended.CompProperties_FireModes">
+		<aiAimMode>AimedShot</aiAimMode>
+	  </li>
+	</comps>
+
+</ThingDef>
+	
+
+	
+</Defs>
