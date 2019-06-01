@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- ==================== Weapon List ==================== 
+Lead Ball (new):
+Brown Bess (w/ bayonet)
+Baker Rifle
+Enfield 1853 Rifle
+
+.303:
+Martini-Enfield 
+Scoped Lee-Enfield
+Bren Gun
+Lewis Gun
+Ross Rifle
+Lee-Enfield Carbine
+Vickers Gun (turret)
+
+9x19:
+Sten Gun
+Sterling
+Browning Hi-Power
+L106A1 (SIG P229 variant)
+L131A1 (Glock 17 Variant)
+
+7.62 NATO:
+!L1A1 SLR (FAL variant) (already in CE Guns)
+L7A2 FN MAG
+L129A1 Marksmans Rifle
+
+5.56 NATO:
+L85A2
+L86A2 LSW
+L108A1, L110A2 (FN Minimi variants)
+
+Self Contained:
+L2A1 ILAW (AT4)
+-->
+
+
+<Defs>
+ <!-- ==================== Set up parents ==================== -->
+
+     <ThingDef Name="BaseGun_ATGB" Abstract="True">
+    <category>Item</category>
+    <thingClass>ThingWithComps</thingClass>
+    <equipmentType>Primary</equipmentType>
+    <pathCost>10</pathCost>
+    <useHitPoints>True</useHitPoints>
+    <selectable>True</selectable>
+    <graphicData>
+      <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
+    </graphicData>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>2</DeteriorationRate>
+      <SellPriceFactor>0.5</SellPriceFactor>
+    </statBases>
+    <altitudeLayer>Item</altitudeLayer>
+    <alwaysHaulable>True</alwaysHaulable>
+    <tickerType>Never</tickerType>
+    <techLevel>Industrial</techLevel>
+    <smeltable>true</smeltable>
+    <thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+      <li>
+        <compClass>CompQuality</compClass>
+      </li>
+      <li Class="CompProperties_Art">
+        <nameMaker>NamerArtWeaponGun</nameMaker>
+        <descriptionMaker>ArtDescription_WeaponGun</descriptionMaker>
+        <minQualityForArtistic>Excellent</minQualityForArtistic>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef Name="BaseMakeableGun_ATGB" ParentName="BaseGun_ATGB" Abstract="True">
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>Gunsmithing</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+  </Defs>
+  
+  <ThingDef Name="BaseHumanMakeableGun_ATGB" ParentName="BaseMakeableGun_ATGB" Abstract="True">
+    <weaponTags>
+      <li>Gun</li>
+    </weaponTags>
+  </ThingDef>

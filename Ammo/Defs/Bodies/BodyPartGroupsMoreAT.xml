@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ranged weapon stabbing tool -->
+
+  <BodyPartGroupDef>
+    <defName>Bayonet</defName>
+    <label>bayonet</label>
+  </BodyPartGroupDef>
+
+
+</Defs>
