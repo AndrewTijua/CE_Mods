@@ -922,7 +922,7 @@ L2A1 ILAW (AT4)
       </li>
       <li Class="CombatExtended.CompProperties_FireModes">
         <aiUseBurstMode>TRUE</aiUseBurstMode>
-        <aiAimMode>Suppress</aiAimMode>
+        <aiAimMode>SuppressFire</aiAimMode>
         <aimedBurstShotCount>3</aimedBurstShotCount>
       </li>
     </comps>
