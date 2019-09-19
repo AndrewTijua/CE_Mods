@@ -292,7 +292,7 @@
   <ThingDef ParentName="BaseHumanMakeableGun_CE">
     <defName>CG_Gauss_Pistol</defName>
     <label>G4 Handheld MagGun</label>
-    <description>Compact sidearm utilising coilgun technologies. Issued to frontline officers in highly advanced militaries.</description>
+    <description>Compact sidearm utilising coilgun technologies. Issued to frontline officers in highly advanced militaries. Crunchy.</description>
     <graphicData>
       <texPath>Things/Weapons/Gauss_4</texPath>
       <graphicClass>Graphic_Single</graphicClass>
